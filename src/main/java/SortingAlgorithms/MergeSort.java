@@ -15,7 +15,7 @@ public class MergeSort {
         int count = 0;
         int middle = indexMiddle;
         int start = indexLeft;
-        while(true) {
+        while(indexLeft <= middle && indexMiddle < indexRight) {
             if(data[indexLeft] > data[indexMiddle + 1]){
                 tempArray[count++] = data[indexMiddle + 1];
                 indexMiddle++;
@@ -31,19 +31,16 @@ public class MergeSort {
                 indexLeft++;
                 if(count == size) break;
             }
-
-            if(indexLeft > middle) {
-                while(indexMiddle < indexRight) {
-                    tempArray[count++] = data[indexMiddle + 1];
-                    indexMiddle++;
-                }
-                break;
+        }
+        if(indexLeft > middle) {
+            while(indexMiddle < indexRight) {
+                tempArray[count++] = data[indexMiddle + 1];
+                indexMiddle++;
             }
-            if(indexMiddle >= indexRight) {
-                while(indexLeft <= middle) {
-                    tempArray[count++] = data[indexLeft++];
-                }
-                break;
+        }
+        if(indexMiddle >= indexRight) {
+            while(indexLeft <= middle) {
+                tempArray[count++] = data[indexLeft++];
             }
         }
         for (int j : tempArray) {
