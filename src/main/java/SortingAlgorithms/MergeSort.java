@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] array = {2, 3, 3, 2, 3, 1 ,2 };
+        int[] array = {4, 7, 1, 12, 90, 7, 2, 55};
         MergeSort.mergeSort(array);
         System.out.println(Arrays.toString(array));
     }
@@ -15,34 +15,36 @@ public class MergeSort {
         int count = 0;
         int middle = indexMiddle;
         int start = indexLeft;
-        for(int i = 0; i <= size; i++) {
+        while(true) {
             if(data[indexLeft] > data[indexMiddle + 1]){
                 tempArray[count++] = data[indexMiddle + 1];
                 indexMiddle++;
             }
-            else if(data[indexLeft] == data[indexMiddle + 1]){
+            else if(data[indexLeft] < data[indexMiddle + 1]){
+                tempArray[count++] = data[indexLeft];
+                indexLeft++;
+            }
+            else{
                 tempArray[count++] = data[indexMiddle + 1];
                 tempArray[count++] = data[indexLeft];
                 indexMiddle++;
                 indexLeft++;
-                i++;
                 if(count == size) break;
-            }
-            else {
-                tempArray[count++] = data[indexLeft];
-                indexLeft++;
             }
 
             if(indexLeft > middle) {
-                tempArray[count] = data[indexRight];
+                while(indexMiddle < indexRight) {
+                    tempArray[count++] = data[indexMiddle + 1];
+                    indexMiddle++;
+                }
                 break;
             }
-
             if(indexMiddle >= indexRight) {
-                tempArray[count] = data[indexLeft];
+                while(indexLeft <= middle) {
+                    tempArray[count++] = data[indexLeft++];
+                }
                 break;
             }
-
         }
         for (int j : tempArray) {
             data[start++] = j;
