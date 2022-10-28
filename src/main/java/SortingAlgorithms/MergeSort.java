@@ -4,35 +4,45 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] array = {2, 45, 5, 8, 10 , 324, 11};
+        int[] array = {2, 3, 3, 2, 3, 1 ,2 };
         MergeSort.mergeSort(array);
         System.out.println(Arrays.toString(array));
     }
 
     private static void merge(int[] data, int indexLeft, int indexMiddle, int indexRight) {
-        int[] tempArray = new int[indexRight - indexLeft + 1];
+        int size = indexRight - indexLeft + 1;
+        int[] tempArray = new int[size];
         int count = 0;
         int middle = indexMiddle;
         int start = indexLeft;
-        while (true) {
+        for(int i = 0; i <= size; i++) {
             if(data[indexLeft] > data[indexMiddle + 1]){
                 tempArray[count++] = data[indexMiddle + 1];
                 indexMiddle++;
-
-                if(indexMiddle >= indexRight) {
-                    tempArray[count] = data[indexLeft];
-                    break;
-                }
+            }
+            else if(data[indexLeft] == data[indexMiddle + 1]){
+                tempArray[count++] = data[indexMiddle + 1];
+                tempArray[count++] = data[indexLeft];
+                indexMiddle++;
+                indexLeft++;
+                i++;
+                if(count == size) break;
             }
             else {
                 tempArray[count++] = data[indexLeft];
                 indexLeft++;
-
-                if(indexLeft > middle) {
-                    tempArray[count] = data[indexRight];
-                    break;
-                }
             }
+
+            if(indexLeft > middle) {
+                tempArray[count] = data[indexRight];
+                break;
+            }
+
+            if(indexMiddle >= indexRight) {
+                tempArray[count] = data[indexLeft];
+                break;
+            }
+
         }
         for (int j : tempArray) {
             data[start++] = j;
