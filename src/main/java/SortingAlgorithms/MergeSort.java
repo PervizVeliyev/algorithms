@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] array = {4, 7, 1, 12, 90, 7, 2, 55};
+        int[] array = {4, 7, 1, 12, 90, 7, 1, 10000};
         MergeSort.mergeSort(array);
         System.out.println(Arrays.toString(array));
     }
@@ -20,29 +20,21 @@ public class MergeSort {
                 tempArray[count++] = data[indexMiddle + 1];
                 indexMiddle++;
             }
-            else if(data[indexLeft] < data[indexMiddle + 1]){
+            else {
                 tempArray[count++] = data[indexLeft];
                 indexLeft++;
             }
-            else{
-                tempArray[count++] = data[indexMiddle + 1];
-                tempArray[count++] = data[indexLeft];
-                indexMiddle++;
-                indexLeft++;
-                if(count == size) break;
-            }
         }
-        if(indexLeft > middle) {
-            while(indexMiddle < indexRight) {
-                tempArray[count++] = data[indexMiddle + 1];
-                indexMiddle++;
-            }
+
+        while(indexMiddle < indexRight && indexLeft > middle) {
+            tempArray[count++] = data[indexMiddle + 1];
+            indexMiddle++;
         }
-        if(indexMiddle >= indexRight) {
-            while(indexLeft <= middle) {
-                tempArray[count++] = data[indexLeft++];
-            }
+
+        while(indexLeft <= middle && indexMiddle >= indexRight) {
+            tempArray[count++] = data[indexLeft++];
         }
+
         for (int j : tempArray) {
             data[start++] = j;
         }
