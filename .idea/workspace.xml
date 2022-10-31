@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6a9a2cb-5496-426b-964b-47ebd9d1b414" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/BitOperations/BitRepresentation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/BitOperations/BitToInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SortingAlgorithms/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SortingAlgorithms/MergeSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,20 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BitRepresentation">
+    <configuration name="BitRepresentation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BitOperations.BitRepresentation" />
+      <module name="algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BitOperations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SortingAlgorithms.MergeSort" />
       <module name="algorithms" />
@@ -54,6 +68,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BitRepresentation" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,7 +87,8 @@
       <workItem from="1666980917646" duration="5978000" />
       <workItem from="1667024873040" duration="1327000" />
       <workItem from="1667047563468" duration="235000" />
-      <workItem from="1667112080641" duration="292000" />
+      <workItem from="1667112080641" duration="496000" />
+      <workItem from="1667114252108" duration="3829000" />
     </task>
     <servers />
   </component>
